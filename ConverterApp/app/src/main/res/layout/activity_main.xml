@@ -190,9 +190,7 @@
                 android:layout_weight="1"
                 android:text="Календарь" />
         </LinearLayout>
-
-        <!-- android:onClick="getCalendar" -->
-
+        
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
