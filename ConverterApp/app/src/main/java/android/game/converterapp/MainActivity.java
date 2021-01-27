@@ -1,7 +1,7 @@
 package android.game.converterapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +9,7 @@ import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -21,8 +22,17 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextMeters;
     private EditText editTextCentimeters;
     private Button btnConvert;
+    private Button editTextEntranceButton;
     private ToggleButton switchConverting;
     private boolean cmToM = false;
+    private EditText editTextTextPersonName;
+    private EditText editTextPhone;
+    private EditText editTextTextEmailAddress;
+    private EditText editTextTextPassword;
+    private RadioButton radioButton;
+    private TextView textViewMeters;
+    private TextView textViewCentimeters;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
         catch(Exception e){
             textException.setText(e.toString());
         }
+    }
+
+    public void comeIn(View view) {
+        editTextEntranceButton.setVisibility(View.GONE);
+        editTextTextPersonName.setVisibility(View.GONE);
+        editTextPhone.setVisibility(View.GONE);
+        editTextTextEmailAddress.setVisibility(View.GONE);
+        editTextTextPassword.setVisibility(View.GONE);
+        setConverterVisibility(View.VISIBLE);
     }
 
     private void convertLogics(){
@@ -74,7 +93,9 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         initCalendar();
         initSwitchConverting();
+        setConverterVisibility(View.GONE);
     }
+
 
     private void initSwitchConverting() {
         switchConverting.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -90,6 +111,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void setConverterVisibility(int view){
+        getCalendar.setVisibility(view);
+        dateText.setVisibility(view);
+        editTextMeters.setVisibility(view);
+        editTextCentimeters.setVisibility(view);
+        btnConvert.setVisibility(view);
+        textException.setVisibility(view);
+        switchConverting.setVisibility(view);
+        radioButton.setVisibility(view);
+        textViewMeters.setVisibility(view);
+        textViewCentimeters.setVisibility(view);
     }
 
     private void initCalendar(){
@@ -126,8 +160,16 @@ public class MainActivity extends AppCompatActivity {
         editTextMeters = findViewById(R.id.editTextMeters);
         editTextCentimeters = findViewById(R.id.editTextCentimeters);
         btnConvert = findViewById(R.id.btnConvert);
+        editTextEntranceButton = findViewById(R.id.editTextEntranceButton);
         textException = findViewById(R.id.textException);
         switchConverting = findViewById(R.id.switchConverting);
+        editTextTextPersonName = findViewById(R.id.editTextTextPersonName);
+        editTextPhone = findViewById(R.id.editTextPhone);
+        editTextTextEmailAddress = findViewById(R.id.editTextTextEmailAddress);
+        editTextTextPassword = findViewById(R.id.editTextTextPassword);
+        textViewMeters = findViewById(R.id.textViewMeters);
+        textViewCentimeters = findViewById(R.id.textViewCentimeters);
+        radioButton = findViewById(R.id.radioButton);
     }
 
 }

@@ -7,8 +7,87 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
     <FrameLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+            </ImageView>
+
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Введите ваше имя" />
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone"
+                android:text="Введите ваш номер"
+                />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:text="Введите ваш имеил"
+                />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:text="Введите ваш пароль"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+            </ImageView>
+
+            <Button
+                android:id="@+id/editTextEntranceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:text="  Войти   "
+                android:onClick="comeIn"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="509dp"
         android:layout_marginBottom="160dp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
@@ -190,7 +269,7 @@
                 android:layout_weight="1"
                 android:text="Календарь" />
         </LinearLayout>
-        
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
